@@ -1,10 +1,8 @@
 package Minggu2;
 
-public class buku09 {
+public class Buku09 {
     String judul, pengarang;
     int halaman, stok, harga;
-
-}
 
     void tampilInformasi() {
         System.out.println("Judul: " + judul);
@@ -16,12 +14,21 @@ public class buku09 {
     }
 
     void terjual(int jml){
+    if (stok > 0){
         stok -= jml;
+
+    }        
    }
     void restock(int jml){
         stok += jml;
     }
-    void gantiHarga(int jml){
-        harga = stok;
+    void gantiHarga(int hrg){
+        harga = hrg;
     }
+
     
+}
+
+
+    
+

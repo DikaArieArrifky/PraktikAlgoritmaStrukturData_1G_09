@@ -19,5 +19,7 @@ public class bukuMain09 {
         bk2.terjual(11);
         bk2.tampilInformasi();
 
+        Buku09 BukuDikaArie = new Buku09("Malin Kundang", "Dede Fiemansyah", 28, 10, 5000);
+        BukuDikaArie.tampilInformasi();
     }
 }

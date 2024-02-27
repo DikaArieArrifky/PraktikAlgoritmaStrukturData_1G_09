@@ -1,26 +1,26 @@
 package Minggu3;
 
+import java.util.Scanner;
+
 public class arrayObjects09 {
     public static void main(String[] args) {
         persegiPanjang[] ppArray09 = new persegiPanjang[3];
 
-        ppArray09[0] = new persegiPanjang();
-        ppArray09[0].panjang = 110;
-        ppArray09[0].lebar = 30;
+        Scanner sc09 = new Scanner(System.in);
 
-        ppArray09[1] = new persegiPanjang();
-        ppArray09[1].panjang = 80;
-        ppArray09[1].lebar = 40;
+        for (int i = 0; i < 3; i++) {
+            ppArray09[i] = new persegiPanjang();
+            System.out.println("Persegi Panjang ke- "+i);
+            System.out.print("Masukkan Panjang: ");
+            ppArray09[i].panjang = sc09.nextInt();
+            System.out.print("Masukkan lebar: ");
+            ppArray09[i].lebar = sc09.nextInt();
+        }
 
-        ppArray09[2] = new persegiPanjang();
-        ppArray09[2].panjang = 100;
-        ppArray09[2].lebar = 20;
-
-        System.out.println("Persegi Panjang ke-0, panjang: " + ppArray09[0].panjang+ ", lebar: " + ppArray09[0].lebar);
-        System.out.println("Persegi Panjang ke-1, panjang: " + ppArray09[1].panjang+ ", lebar: " + ppArray09[1].lebar);
-        System.out.println("Persegi Panjang ke-2, panjang: " + ppArray09[2].panjang+ ", lebar: " + ppArray09[2].lebar);
-
-
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Persegi panjang ke- "+i);
+            System.out.println("Panjang : "+ ppArray09[i].panjang + ", Lebar : " + ppArray09[i].lebar);
+        }
 
     }
 }

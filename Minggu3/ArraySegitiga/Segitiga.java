@@ -5,7 +5,8 @@ public class Segitiga {
     public int tinggi;
 
     public Segitiga(int a, int t) {
-        alas = tinggi;
+        alas = a;
         tinggi = t;
     }
+    
 }

@@ -10,5 +10,9 @@ public class MainSegitiga {
         sgArray09[2] = new Segitiga(15, 6);
         sgArray09[3] = new Segitiga(25, 10);
 
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Luas Segitiga ke- " + i +": " + sgArray09[i].hitungVolume());
+            System.out.println("Keliling segitiga ke- " + i + ": " + sgArray09[i].hitungKeliling());
+        }
     }
 }

@@ -4,43 +4,65 @@ import java.util.Scanner;
 
 public class MainMahasiswa09 {
 
-    
-
     public static void main(String[] args) {
         Scanner sc09 = new Scanner(System.in);
 
-        mahasiswa09 [] MhsArray = new mahasiswa09[3];
+        Mahasiswa09[] mhsArray = new Mahasiswa09[3];
 
         for (int i = 0; i < 3; i++) {
-            System.out.print("Masukkan data mahasiswa ke "+ (i+1));
-            System.out.println();
-            
-            MhsArray[i] = new mahasiswa09();
-            
+            System.out.println("Masukkan data mahasiswa ke " + (i + 1));
             System.out.print("Masukkan nama : ");
-            MhsArray[i].nama=sc09.nextLine();
+            String nama = sc09.nextLine();
             System.out.print("Masukkan nim : ");
-            MhsArray[i].nim = sc09.nextLong();
+            long nim = sc09.nextLong();
             sc09.nextLine();
             System.out.print("Masukkan jenis kelamin : ");
-            MhsArray[i].jenisKelamin = sc09.nextLine();
-            
+            String jenisKelamin = sc09.nextLine();
             System.out.print("Masukkan IPK : ");
-            MhsArray[i].ipkMHS = Double.parseDouble(sc09.nextLine());
+            double ipkMHS = Double.parseDouble(sc09.nextLine());
             System.out.println();
-    
-        } 
-        for (int i  = 0; i < 3; i++) {
-            
+
+            mhsArray[i] = new Mahasiswa09();
+            mhsArray[i].nama = nama;
+            mhsArray[i].nim = nim;
+            mhsArray[i].jenisKelamin = jenisKelamin;
+            mhsArray[i].ipkMHS = ipkMHS;
+        }
+
+        for (int i = 0; i < 3; i++) {
             System.out.println("===Data Mahasiswa===");
-            System.out.println("Data Mahasiswa ke- "+  (i+1));
-            System.out.println("nama : "+ MhsArray[i].nama);
-            System.out.println("nim : "+MhsArray[i].nim);
-            System.out.println("Jenis Kelamin : "+MhsArray[i].jenisKelamin);
-            System.out.println("IPK : "+MhsArray[i].ipkMHS);
+            System.out.println("Data Mahasiswa ke- " + (i + 1));
+            System.out.println("Nama : " + mhsArray[i].nama);
+            System.out.println("NIM : " + mhsArray[i].nim);
+            System.out.println("Jenis Kelamin : " + mhsArray[i].jenisKelamin);
+            System.out.println("IPK : " + mhsArray[i].ipkMHS);
+        }
 
-        }     
+        double rataIpk = hitungRataIpk(mhsArray);
+        System.out.println("Rata-rata IPK mahasiswa: " + rataIpk);
+
        
+        Mahasiswa09 mahasiswaTertinggi = mahasiswaDenganIpkTertinggi(mhsArray);
+        System.out.println("Mahasiswa dengan IPK tertinggi:");
+        System.out.println("Nama: " + mahasiswaTertinggi.nama);
+        System.out.println("IPK: " + mahasiswaTertinggi.ipkMHS);
+    }
 
+    public static double hitungRataIpk(Mahasiswa09[] mhsArray) {
+        double totalIpk = 0;
+        for (Mahasiswa09 mahasiswa : mhsArray) {
+            totalIpk += mahasiswa.ipkMHS;
+        }
+        return totalIpk / mhsArray.length;
+    }
+
+    public static Mahasiswa09 mahasiswaDenganIpkTertinggi(Mahasiswa09[] mahasiswaArray) {
+        Mahasiswa09 mahasiswaTertinggi = mahasiswaArray[0];
+        for (Mahasiswa09 mahasiswa : mahasiswaArray) {
+            if (mahasiswa.ipkMHS > mahasiswaTertinggi.ipkMHS) {
+                mahasiswaTertinggi = mahasiswa;
+            }
+        }
+        return mahasiswaTertinggi;
     }
 }

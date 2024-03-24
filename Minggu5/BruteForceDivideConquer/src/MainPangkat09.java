@@ -9,11 +9,9 @@ public class MainPangkat09 {
 
         Pangkat09[] png = new Pangkat09 [elemen];
         for (int i = 0; i < elemen; i++) {
-            png [i] = new Pangkat09();
-            System.out.println("Masukkan nilai yang hendak dipangkatkan : ");
-            png[i].nilai= sc09.nextInt();
+          
             System.out.println("Masukkan nilai pemangkat : ");
-            png[i].pangkat = sc09.nextInt();
+            png[i] = new Pangkat09(6, 2);
 
         }
         System.out.println("HASIL PANGKAT - BRUTE FORCE");

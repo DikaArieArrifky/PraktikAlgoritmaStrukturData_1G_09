@@ -48,5 +48,11 @@ public class MainBuku09 {
 
         Buku09 dataBuku09= data.findBuku(cari);
         dataBuku09.tampilBuku();
+
+        System.out.println("===================================");
+        System.out.println("Menggunakan binary Search");
+        posisi = data.findBinarySearch(cari, 0, jumBuku -1);
+        data.tampilPosisi(cari, posisi);
+        data.tampilData(cari, posisi);
     }
 }

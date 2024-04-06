@@ -1,4 +1,4 @@
-
+import Minggu4.elektronik09;
 
 public class PencarianBuku09 {
     Buku09 listBk [] = new Buku09[5];
@@ -58,6 +58,21 @@ public class PencarianBuku09 {
         } else {
             System.out.println("data " + x + " tidak ditemukan");
         }
+    }
+
+    public int findBinarySearch(int cari, int left, int right){
+        int mid;
+        if (right >= left) {
+            mid = (right+left) /2;
+            if (cari == listBk[mid].kodeBuku) {
+                return (mid);
+            } else if (listBk[mid].kodeBuku > cari) {
+                return findBinarySearch(cari , left , mid-1);
+            } else{ 
+                return findBinarySearch(cari, mid+1, right);
+                
+            }
+        } return -1;
     }
  
 }

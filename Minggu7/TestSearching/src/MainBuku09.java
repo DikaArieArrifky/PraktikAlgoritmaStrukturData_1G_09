@@ -45,5 +45,8 @@ public class MainBuku09 {
         data.tampilPosisi(cari, posisi);
 
         data.tampilData(cari, posisi);
+
+        Buku09 dataBuku09= data.findBuku(cari);
+        dataBuku09.tampilBuku();
     }
 }

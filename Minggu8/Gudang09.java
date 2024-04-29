@@ -73,4 +73,6 @@ public class Gudang09 {
             System.out.println("Tumpukan barang kosong");
         }
     }
+
+    
 }

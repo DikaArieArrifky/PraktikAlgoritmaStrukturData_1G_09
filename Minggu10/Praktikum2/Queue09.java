@@ -96,4 +96,11 @@ public class Queue09 {
         return dt;
 
     }
+    public void peekRear() {
+        if (!isEmpty() ) {
+            System.out.println("Elemen terbelakang : " + data[rear].norek + " " + data[rear].nama + " " + data[rear].alamat + " " + data[rear].umur + " " + data[rear].saldo);
+        } else {
+            System.out.println("Queue masih kosong");
+        }
+    }
 }

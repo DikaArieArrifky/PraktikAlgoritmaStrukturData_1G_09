@@ -35,26 +35,26 @@ public class DoubleLinkedList09 {
 
     }
 
-    public void remove(int index) {
-
-        Node09 current = head;
-
-        while (current != null) {
-            if (current.data == index) {
-                if (current.prev != null) {
-                    current.prev.next = current.next;
-                } else {
-                    head = current.next;
-                }
-                if (current.next != null) {
-                    current.prev.next = current.prev;
-
-                }
-                break;
-            }
-            current = current.next;
+    public void remove(int index) throws Exception{
+        if (isEmpty() || index >= size) {
+            throw new Exception("Nilai indeks di luar batas");
         }
+        Node09 current = head;
+       for (int i = 0; i < index; i++) {
+           current = current.next;
     }
+    if (current.prev != null) {
+        current.prev.next = current.next;
+    } else {
+        head = current.next;
+    }   
+    if (current.next != null) {
+        current.next.prev = current.prev;
+    }
+    size--;
+}
+
+
     public int get(int index) throws Exception{
         if (isEmpty()) {
             throw new Exception("Nilai indeks di luar batas");

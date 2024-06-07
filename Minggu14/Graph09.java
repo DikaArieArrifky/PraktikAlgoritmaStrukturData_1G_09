@@ -45,7 +45,14 @@ public class Graph09 {
             }
         }
     }
-
+    
+    public void removeEdge(int asal, int tujuan) throws Exception{
+        for (int i = 0; i < vertex; i++) {
+            if (i == tujuan) {
+                list[asal].remove(tujuan);
+            }
+        }
+    }
     public void removeAllEdges() {
         for (int i = 0; i < vertex; i++) {
             list[i].clear();

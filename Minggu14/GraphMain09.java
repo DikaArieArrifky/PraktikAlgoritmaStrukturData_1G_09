@@ -1,5 +1,7 @@
 package Minggu14;
 
+import java.util.Scanner;
+
 public class GraphMain09 {
     public static void main(String[] args) throws Exception {
         Graph09 gedung = new Graph09(6);
@@ -14,5 +16,25 @@ public class GraphMain09 {
         gedung.printGraph();
         gedung.removeEdge(1, 3);
         gedung.printGraph();
+
+        Scanner sc09 = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("Masukkan gedung asal : ");
+            int asal = sc09.nextInt();
+            if (asal == -1) {
+                break;
+            }
+
+            System.out.print("Masukkan gedung tujuan : ");
+            int tujuan = sc09.nextInt();
+
+            if (gedung.apkhTetangga(asal, tujuan)) {
+                System.out.println("Gedung " + (char) ('A' +asal) + " dan " + (char) ('A' + tujuan) + " bertetangga");
+            } else {
+                System.out.println("Gedung " + (char) ('A' +asal) + " dan " + (char) ('A' + tujuan) + " tidak bertetangga");
+
+            }
+        }
     }
 }

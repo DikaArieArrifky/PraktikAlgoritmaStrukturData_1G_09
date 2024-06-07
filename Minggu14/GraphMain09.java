@@ -46,9 +46,14 @@ public class GraphMain09 {
         gdg.makeEdge(3, 0, 90);
         gdg.printGraph();
         System.out.println();
+
         System.out.println("Hasil setelah penghapusan edge");
         gdg.removeEdge(2, 1);
         gdg.printGraph();
+        
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Gedung " + (char) ('A' + i) + ": InDegree = " + gdg.inDegree(i) + ", OutDegree = " + gdg.outDegree(i) + ", Total Degree = " + gdg.degree(i));
+        }
         
 
     }   
